@@ -5,7 +5,6 @@ import com.google.common.hash.HashFunction;
 import com.google.common.hash.PrimitiveSink;
 import edu.sjsu.cmpe.cache.methods.ConsistentHash;
 import edu.sjsu.cmpe.cache.methods.RendezvousHash;
-import sun.misc.Hashing;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,7 +25,7 @@ public class Client {
 
         //Start of Consistent hasing
         //Please uncomment below code for Consistent hashing
-/*        ConsistentHash consistentHash=new ConsistentHash(com.google.common.hash.Hashing.md5(),3,AvailableServers);
+        ConsistentHash consistentHash=new ConsistentHash(com.google.common.hash.Hashing.md5(),3,AvailableServers);
         System.out.println("Consistent Hashing:-");
         for(int i=1; i<=10; i++)	{
             System.out.println("Input - Get value from key: "+i+ consistentHash.get(i));
@@ -38,11 +37,11 @@ public class Client {
             DistributedCacheService node=(DistributedCacheService)consistentHash.get(j);
             System.out.println("Output - Get("+j+") => value: "+node.get(j));
         }
- */       //End of Consistent Hashing
+       //End of Consistent Hashing
 
         //Start of RendezvousHash
         //Please uncomment below code block for RendezvousHash...
-
+/*
         RendezvousHash<String> RendezvousHash_consistentHash = new RendezvousHash(AvailableServers);
         for (int i = 1; i <= 10; i++) {
             addToCache(i, String.valueOf((char) (i + 96)), RendezvousHash_consistentHash);
@@ -53,7 +52,7 @@ public class Client {
             System.out.println("Output - Get (" + i + ") => "+ value.get(i));
         }
 
-    //End of RendezvousHash
+*/    //End of RendezvousHash
     }
 
     /*
